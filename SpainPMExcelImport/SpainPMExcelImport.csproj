@@ -51,12 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PMInteraction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tool.cs" />
     <Compile Include="ToolDataValues.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AccessDatabaseEngine.exe" />
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

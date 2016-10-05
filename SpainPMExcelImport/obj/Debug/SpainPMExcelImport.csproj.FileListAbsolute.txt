@@ -8,3 +8,9 @@ E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\PowerMILL.dll
 E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.csprojResolveAssemblyReference.cache
 E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.exe
 E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.pdb
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.csprojResolveAssemblyReference.cache
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.exe
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.exe.config
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.exe
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.pdb
+C:\Users\omiku\Documents\SharpDevelop Projects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.pdb

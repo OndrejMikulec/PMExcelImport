@@ -157,19 +157,19 @@ namespace SpainPMExcelImport
 			_length = double.Parse( inputData._flute_length);
 			_identifier =_name;
 			_diameter = double.Parse( inputData._diameter);
-			_upperTipRadius;
+			/*_upperTipRadius;
 			_barrelRadius;
-			_flatBottom;
+			_flatBottom;*/
 			_status = "";
 			_overhang = double.Parse( inputData._shoulder_length);
-			_pitch;
+			//_pitch;
 			_tipRadius = double.Parse( inputData._corner_radius);
-			_tipRadiusCentre;
+			/*_tipRadiusCentre;
 			_taperAngle;
-			_taperHeight;
+			_taperHeight;*/
 			_numberOfFlutes = int.Parse( inputData._number_of_flutes);
-			_description;
-			_routinEndMillDiameter;
+			//_description;
+			//_routinEndMillDiameter;
 			
 			
 			
@@ -243,7 +243,7 @@ namespace SpainPMExcelImport
 			 _cuttingSpeedRoughingProfiling = cs;
 			 _cuttingSpeedRoughingSlotting  = cs;
 			 
-			 _toolFamily;
+			 //_toolFamily;
 			
 			
 			switch (inputData._coolant_mode) {
@@ -255,12 +255,12 @@ namespace SpainPMExcelImport
 			
 			
 			
-			_stockMaterial;
+			//_stockMaterial;
 			_idTracksName = true;
-			_holderName;
+			//_holderName;
 			
 			_shankSegments.Add(new Segment(){UpperDiameter = _diameter-0.1, LowerDiameter=_diameter-0.1,Length=double.Parse(inputData._shoulder_length),Ignore=false});
-			_shankSegments.Add(new Segment(){UpperDiameter = double.Parse(inputData._shaft_diameter) -0.1, double.Parse(inputData._shaft_diameter) -0.1,Length=double.Parse(inputData._body_length)-double.Parse(inputData._shoulder_length),Ignore=false});
+			_shankSegments.Add(new Segment(){UpperDiameter = double.Parse(inputData._shaft_diameter) -0.1, LowerDiameter = double.Parse(inputData._shaft_diameter) -0.1,Length=double.Parse(inputData._body_length)-double.Parse(inputData._shoulder_length),Ignore=false});
 			
 			 
 		}
@@ -268,31 +268,26 @@ namespace SpainPMExcelImport
 		void applyToPm()
 		{
 			_pmApp.DoCommand("CREATE TOOL ;");
-			_pmApp.DoCommand(@"$entity(""Tool"","""").Diameter = "+_PrumerD1.ToString().Replace(",","."));
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").NumberOfFlutes = "+_Zuby);
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Coolant = "+PMCoolant);
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Number.UserDefined = 1");
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Number.Value = "+_Nastroj);
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Overhang = "+_Vylozeni.ToString().Replace(",","."));
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Type = ""drill""");
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").TipRadius = "+_RadiusRohu.ToString().Replace(",","."));
-			_pmApp.DoCommand(@"$entity(""Tool"","""+_NazevN+@""").Length = "+Segmenty[0].Rozmer2.ToString().Replace(",","."));
-			_pmApp.DoCommand(@"EDIT TOOL  """+_NazevN+@""" SHANK_CLEAR");
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Diameter = "+_diameter);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").NumberOfFlutes = "+_numberOfFlutes);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Coolant = """+_coolant+@"""");
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Number.UserDefined = "+_numberUserDefined);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Number.Value = "+_numberValue);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Overhang = "+_overhang);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Type = """+_type+@"""");
+			_pmApp.DoCommand(@"$entity(""Tool"","""").TipRadius = "+_tipRadius);
+			_pmApp.DoCommand(@"$entity(""Tool"","""").Length = "+_length);
 			
-			for (int i = 0; i < Segmenty.Count; i++) {
-				slozenaDelka += Segmenty[i].Rozmer2;
-				if (slozenaDelka>Segmenty[i].Rozmer2) {
-					
-					
-					_pmApp.DoCommand(@"EDIT TOOL  """+_NazevN+@"""  SHANK_COMPONENT ADD");
-					_pmApp.DoCommand(@"EDIT TOOL  """+_NazevN+@"""  SHANK_COMPONENT UPPERDIA "+Segmenty[i].Rozmer1.ToString().Replace(".",","));
-					_pmApp.DoCommand(@"EDIT TOOL  """+_NazevN+@"""  SHANK_COMPONENT LOWERDIA "+Segmenty[i].Rozmer3.ToString().Replace(".",","));
-					_pmApp.DoCommand(@"EDIT TOOL  """+_NazevN+@"""  SHANK_COMPONENT LENGTH "+Segmenty[i].Rozmer2.ToString().Replace(".",","));
-					
-					
-				}
-				
-				
+			
+			_pmApp.DoCommand(@"EDIT TOOL  ; SHANK_CLEAR");
+			
+			for (int i = 0; i < _shankSegments.Count; i++) {
+	
+				_pmApp.DoCommand(@"EDIT TOOL  ;  SHANK_COMPONENT ADD");
+				_pmApp.DoCommand(@"EDIT TOOL  ;  SHANK_COMPONENT UPPERDIA "+_shankSegments[i].UpperDiameter);
+				_pmApp.DoCommand(@"EDIT TOOL  ;  SHANK_COMPONENT LOWERDIA "+_shankSegments[i].LowerDiameter);
+				_pmApp.DoCommand(@"EDIT TOOL  ;  SHANK_COMPONENT LENGTH "+_shankSegments[i].Length);
+	
 			}
 			
 		}
