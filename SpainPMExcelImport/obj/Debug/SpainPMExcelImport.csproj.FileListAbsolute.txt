@@ -1,0 +1,10 @@
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.exe.config
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.exe
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\SpainPMExcelImport.pdb
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.csprojResolveAssemblyReference.cache
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.exe
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.pdb
+E:\CAM_Projekty\SpainPMExcelImport\SpainPMExcelImport\bin\Debug\PowerMILL.dll
+E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.csprojResolveAssemblyReference.cache
+E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.exe
+E:\CSharpProjects\SpainPMExcelImport\SpainPMExcelImport\obj\Debug\SpainPMExcelImport.pdb
